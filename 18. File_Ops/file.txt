@@ -1,0 +1,1 @@
+This is a basic string writting into the text file.
