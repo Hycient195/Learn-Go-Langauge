@@ -8,7 +8,7 @@ import (
 type Player struct {
 	Name string `json:"playerName"`
 	Password string `json:"-"`
-	Roles []string `json:",omitempty"`
+	Roles []string `json:"tags,omitempty"`
 }
 
 func main() {	
