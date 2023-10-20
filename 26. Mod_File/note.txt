@@ -1,0 +1,50 @@
+/*
+	go get -u github.com/gorilla/mux
+
+	The “go get” command is used to download a package dependency from the internet. You can see it as the equivalent of “npm install” in javaScript.
+
+	When a package is installed, the name and the version of the package is shown in the "go mod" file
+	if the package is unused throught the project, a comment of "//indirect" is marked beside the specific package which is unused.
+
+	It creates a "go sum" that stores all the dependencies that are downloaded by calling "go get"
+	
+	In the go sum file is the name of the packages insalled together with their versions and a repository hash of the exact version.
+	The essence of this hash is to ensure that the specific version of the package online has not been tampered with, (just like cases of a hack)
+	if the hash of a specific version changes then it means that it has been remotely tampered with, and updating or downloading from that
+	version would be unable to execute, in order to ensure safety of the application, by now allowing potential injection of malicious code.
+
+	It is good to know that unline other package managers in other langauges (eg. JavaScript) the packages whoose names are included in the go mod
+	file are not stored directly in the project in which they are being used. They are rather stored in a computer system directory on the local
+	machine and all go project in the computer traverse to that directory to fetch their dependeicies are run and build times
+		The downloaded dependencies can usually be found at the directory "Users/<pc-name>/go/pkg/mod/github.com"
+
+	After a project has been build, the "go tidy" command is used to remove references of unused dependencies, and remove the "//indirect" comment
+	from used dependencies in other to ensure that only used dependencies are compiled at build times. 
+*/
+
+
+
+/*
+	Commands
+
+	1. go run <filename>.go
+
+	2. GOOs=<os-type> go build <filename>.go
+
+	3. go get -u <github url of package>
+
+	4. go mod tidy
+
+	5. go mod verify
+
+	5. go list // list the package you project is dependent on
+
+	6. go list all // Lists all the packages installed on your machine
+
+	7. go list -m all // List all package your project is dependent on.
+
+	8. go mod vendor // Used to pull all the dependencies of your project from where they are stored on your machine, to the root of your proect directory.
+			it created a foldre called "vendor" where all the packages used in your project is stored. Think of it as the "package.json" of Go langauge.
+
+	9. go run -mod=vendor main.go // to to run your application using dependencies stored in the vendor file.
+*/
