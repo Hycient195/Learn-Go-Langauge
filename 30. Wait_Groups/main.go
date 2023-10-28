@@ -22,7 +22,7 @@ func checkWebStatus(url string) {
 	HandlePanicError(err);
 	defer resp.Body.Close();
 	fmt.Printf("%v is status for %v\n", resp.Status, url);
-	wg.Done();
+	defer wg.Done();
 }
 
 func HandlePanicError(e error) {
