@@ -12,7 +12,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"github.com/gorilla/mux"
-	// "go.mongodb.org/mongo-driver/x/mongo/driver/mongocrypt/options"
 )
 
 const MONGO_URL = "mongodb://localhost/demo-blog";
